@@ -1,0 +1,10 @@
+D:\Users\Nathan\OneDrive - Australian National University\Documents\Visual Studio 2019\Projects\NJW Live Screen Project\NJW Live Screen Project\obj\Debug\NJW Live Screen Project.csprojAssemblyReference.cache
+D:\Users\Nathan\OneDrive - Australian National University\Documents\Visual Studio 2019\Projects\NJW Live Screen Project\NJW Live Screen Project\obj\Debug\NJW_Live_Screen_Project.Form1.resources
+D:\Users\Nathan\OneDrive - Australian National University\Documents\Visual Studio 2019\Projects\NJW Live Screen Project\NJW Live Screen Project\obj\Debug\NJW_Live_Screen_Project.Form2.resources
+D:\Users\Nathan\OneDrive - Australian National University\Documents\Visual Studio 2019\Projects\NJW Live Screen Project\NJW Live Screen Project\obj\Debug\NJW_Live_Screen_Project.Properties.Resources.resources
+D:\Users\Nathan\OneDrive - Australian National University\Documents\Visual Studio 2019\Projects\NJW Live Screen Project\NJW Live Screen Project\obj\Debug\NJW Live Screen Project.csproj.GenerateResource.cache
+D:\Users\Nathan\OneDrive - Australian National University\Documents\Visual Studio 2019\Projects\NJW Live Screen Project\NJW Live Screen Project\bin\Debug\NJW Live Screen Project.exe.config
+D:\Users\Nathan\OneDrive - Australian National University\Documents\Visual Studio 2019\Projects\NJW Live Screen Project\NJW Live Screen Project\bin\Debug\NJW Live Screen Project.exe
+D:\Users\Nathan\OneDrive - Australian National University\Documents\Visual Studio 2019\Projects\NJW Live Screen Project\NJW Live Screen Project\bin\Debug\NJW Live Screen Project.pdb
+D:\Users\Nathan\OneDrive - Australian National University\Documents\Visual Studio 2019\Projects\NJW Live Screen Project\NJW Live Screen Project\obj\Debug\NJW Live Screen Project.exe
+D:\Users\Nathan\OneDrive - Australian National University\Documents\Visual Studio 2019\Projects\NJW Live Screen Project\NJW Live Screen Project\obj\Debug\NJW Live Screen Project.pdb
