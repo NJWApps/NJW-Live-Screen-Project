@@ -19,6 +19,7 @@ namespace NJW_Live_Screen_Project
         Rectangle rect;
         private Bitmap areaCapture;
         int screen = 1;
+        string error = "";
         private void timer1_Tick(object sender, EventArgs e)
         {
             //timer1.Stop();
@@ -50,19 +51,23 @@ namespace NJW_Live_Screen_Project
             //}
             try
             {
-rect = new Rectangle(Screen.AllScreens[screen].WorkingArea.Location.X, Screen.AllScreens[screen].WorkingArea.Location.Y, Screen.AllScreens[screen].Bounds.Width, Screen.AllScreens[screen].Bounds.Height);
-            areaCapture = new Bitmap(rect.Width, rect.Height);
+                if (pictureBox1.Image != null) pictureBox1.Image.Dispose();
+                rect = new Rectangle(Screen.AllScreens[screen].WorkingArea.Location.X, Screen.AllScreens[screen].WorkingArea.Location.Y, Screen.AllScreens[screen].Bounds.Width, Screen.AllScreens[screen].Bounds.Height);
+                
+                areaCapture = new Bitmap(rect.Width, rect.Height);
             using (Graphics g = Graphics.FromImage(areaCapture))
             {
                 //g.CopyFromScreen(Point.Empty, Point.Empty, rect.Size);
                 g.CopyFromScreen(Screen.AllScreens[screen].WorkingArea.Location.X, Screen.AllScreens[screen].WorkingArea.Location.Y, 0, 0, rect.Size);
-            }
+                    
+                }
             pictureBox1.Image = areaCapture;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-              
+                error = ex.Message;
+                messageToolStripMenuItem.Text = error;
+                messageToolStripMenuItem.Visible = true;
             }
             
         }
@@ -80,11 +85,13 @@ rect = new Rectangle(Screen.AllScreens[screen].WorkingArea.Location.X, Screen.Al
             {
                 hideToolStripMenuItem.Text = "Show";
                 this.Hide();
+                timer1.Stop();
             }
             else
             {
                 hideToolStripMenuItem.Text = "Hide";
                 this.Show();
+                timer1.Start();
             }
         }
 
@@ -119,6 +126,16 @@ rect = new Rectangle(Screen.AllScreens[screen].WorkingArea.Location.X, Screen.Al
               
 
                     break;
+                case 5:
+                    toolStripMenuItem3.Visible = true;
+                    toolStripMenuItem7.Visible = true;
+                    toolStripMenuItem4.Visible = true;
+                    toolStripMenuItem8.Visible = true;
+                    toolStripMenuItem5.Visible = true;
+                    toolStripMenuItem9.Visible = true;
+                    toolStripMenuItem10.Visible = true;
+                    toolStripMenuItem11.Visible = true;
+                    break;
                 default:
                     break;
             }
@@ -142,6 +159,10 @@ rect = new Rectangle(Screen.AllScreens[screen].WorkingArea.Location.X, Screen.Al
         private void toolStripMenuItem5_Click(object sender, EventArgs e)
         {
             screen = 3;
+        }
+        private void toolStripMenuItem10_Click(object sender, EventArgs e)
+        {
+            screen = 4;
         }
 
         private void toolStripMenuItem6_Click(object sender, EventArgs e)
@@ -187,10 +208,55 @@ rect = new Rectangle(Screen.AllScreens[screen].WorkingArea.Location.X, Screen.Al
             this.ControlBox = false;
             this.WindowState = FormWindowState.Maximized;
         }
+        private void toolStripMenuItem11_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            this.Location = Screen.AllScreens[4].WorkingArea.Location;
+            this.Height = Screen.AllScreens[4].Bounds.Height;
+            this.Width = Screen.AllScreens[4].Bounds.Width;
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.ControlBox = false;
+            this.WindowState = FormWindowState.Maximized;
+        }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void secToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            timer1.Interval = 1000;
+        }
+
+        private void secToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            timer1.Interval = 500;
+        }
+
+        private void secToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            timer1.Interval = 100;
+        }
+
+        private void secToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            timer1.Interval = 10;
+        }
+
+        private void secToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            timer1.Interval = 1;
+        }
+
+        
     }
 }
